@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Configuration>
+
+<Configuration>
+	<dbType>SQLite</dbType>
+	<dbName>testdb</dbName>
+	<dbPath>jdbc:sqlite:testdb</dbPath>
+</Configuration>
+
+
+<!-- <Configuration>
+	<dbType>OrientDB</dbType>
+	<dbName>testdb</dbName>
+	<dbPath>remote:localhost/testdb</dbPath>
+	<dbHost></dbHost>
+	<dbPort></dbPort>
+	<dbUser>admin</dbUser>
+	<dbPassword>admin</dbPassword>
+	<dbPool>10</dbPool>
+</Configuration> -->

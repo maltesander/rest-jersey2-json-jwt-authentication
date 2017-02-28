@@ -1,0 +1,150 @@
+{
+	"variables": [],
+	"info": {
+		"name": "rest-jersey2-json-jwt-authentication",
+		"_postman_id": "e3b12440-2654-e935-f80f-5874b6cb8b5b",
+		"description": "tutorial academy rest-jersey2-json-jwt-authentication project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "create user mark",
+			"request": {
+				"url": "http://localhost:8080/rest-jersey2-json-jwt/user/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"firstname\":\"Mark\",\r\n\t\"lastname\":\"Twain\",\r\n\t\"email\" : \"mark@twain.com\",\r\n\t\"password\" : \"secret\"\r\n}"
+				},
+				"description": "create user"
+			},
+			"response": []
+		},
+		{
+			"name": "create user john",
+			"request": {
+				"url": "http://localhost:8080/rest-jersey2-json-jwt/user/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstname\":\"John\",\n\t\"lastname\":\"Doe\",\n\t\"email\" : \"john@doe.com\",\n\t\"password\" : \"secret\"\n}"
+				},
+				"description": "create user"
+			},
+			"response": []
+		},
+		{
+			"name": "authenticate john",
+			"request": {
+				"url": "http://localhost:8080/rest-jersey2-json-jwt/user/authenticate",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"email\" : \"john@doe.com\",\r\n\t\"password\" : \"secret\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "authenticate admin",
+			"request": {
+				"url": "http://localhost:8080/rest-jersey2-json-jwt/user/authenticate",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"email\" : \"contact@tutorial-academy.com\",\r\n\t\"password\" : \"secret\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get user (jwt required)",
+			"request": {
+				"url": "http://localhost:8080/rest-jersey2-json-jwt/user/get",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJraWQiOiJrMSIsImFsZyI6IlJTMjU2In0.eyJpc3MiOiJ0dXRvcmlhbC1hY2FkZW15LmNvbSIsImV4cCI6MTQ4ODI5MTcxNCwianRpIjoiNjZVcjdzamcxRHpXRnA1dkFGUnpVQSIsImlhdCI6MTQ4ODI4OTkxNCwibmJmIjoxNDg4Mjg5Nzk0LCJpZCI6IjIifQ.eOMwQjV2XoGbIPgJjjVbffDryr9G2TShCvH9SbLY7afBd2RRDYMLhOHKpBnHMhrk2j1Sv7gW5Jh_vjekuhxpmeF_UotVVmJONuDBl23uGfmqPLQzrl9h2vrY9ATUtCQT9D7W4QXpexV7GfQd7r21bRO4uo0gwVibFbTBWehxks-EafZy9LlYCoBEGt8KbPArr7mfiH_7_x2oC0dRsSZlk-8MwfD5wV0-sS-zuMjf9lopqBDfU4W51nwfuUEe0wGYGtX1KA8d4JZtO3EuYCUOcma1cujLmFpw9mHYd6qUOvdkmQVkCYwQeiBCyEKA-eIVtqJ54ae2Ywps_yUts0AGww",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get all users (jwt + admin user) required",
+			"request": {
+				"url": "http://localhost:8080/rest-jersey2-json-jwt/user/getAll",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJraWQiOiJrMSIsImFsZyI6IlJTMjU2In0.eyJpc3MiOiJ0dXRvcmlhbC1hY2FkZW15LmNvbSIsImV4cCI6MTQ4ODI5MTc5NiwianRpIjoibzBFVDZCaG5WaEpiRU9UN2dsTGJlQSIsImlhdCI6MTQ4ODI4OTk5NiwibmJmIjoxNDg4Mjg5ODc2LCJpZCI6IjEifQ.bPr0bvcGk5Ba2Ly0T0_UHlUZq5R3OoGZMfIXsF7FPUue9lwF14tUFu-KPnZ0reYfBvF69riXC-JtFtl0sqqAseOToHM1evbqxushz1rgEty0VG-UzDWlaAs8lVGolyZbaWCQfNT3Gew6RVLWj85CMP3S52wl-_lop9ssoKhYB_uMIizpsdKha4YCRyZ7wOkPqFl3d4ZsTaSW2gtC_-gc6dY7BH6KyyT-giMktqv3nkAx33CEKidhJ4mvHLpHq8Y80n_SHQWJod271jdr0q-2kJdGL9sEyN1er2Ru_QN0kzThjrP7X7k5XNTOyLb8sUN45lodJho4ufQgrGB3CS3BwA",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "update user (jwt required)",
+			"request": {
+				"url": "http://localhost:8080/rest-jersey2-json-jwt/user/update",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "x-access-token",
+						"value": "eyJraWQiOiJrMSIsImFsZyI6IlJTMjU2In0.eyJpc3MiOiJ0dXRvcmlhbC1hY2FkZW15LmNvbSIsImV4cCI6MTQ4ODI5MTcxNCwianRpIjoiNjZVcjdzamcxRHpXRnA1dkFGUnpVQSIsImlhdCI6MTQ4ODI4OTkxNCwibmJmIjoxNDg4Mjg5Nzk0LCJpZCI6IjIifQ.eOMwQjV2XoGbIPgJjjVbffDryr9G2TShCvH9SbLY7afBd2RRDYMLhOHKpBnHMhrk2j1Sv7gW5Jh_vjekuhxpmeF_UotVVmJONuDBl23uGfmqPLQzrl9h2vrY9ATUtCQT9D7W4QXpexV7GfQd7r21bRO4uo0gwVibFbTBWehxks-EafZy9LlYCoBEGt8KbPArr7mfiH_7_x2oC0dRsSZlk-8MwfD5wV0-sS-zuMjf9lopqBDfU4W51nwfuUEe0wGYGtX1KA8d4JZtO3EuYCUOcma1cujLmFpw9mHYd6qUOvdkmQVkCYwQeiBCyEKA-eIVtqJ54ae2Ywps_yUts0AGww",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"firstname\" : \"testUpdateFirstName\",\r\n\t\"lastname\" : \"testUpdateLastName\",\r\n\t\"email\" : \"test@update.com\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
