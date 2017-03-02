@@ -126,7 +126,7 @@ public class UserRestService extends ResourceConfig {
 			// use decoded email from jwt in header
 			User user = userDao.getUser( id );
 			
-			// Return the token on the response
+			// Return the user on the response
 			return ResponseBuilder.createResponse( Response.Status.OK, user );
 		}
 		catch( UserNotFoundException e ) {
@@ -148,7 +148,7 @@ public class UserRestService extends ResourceConfig {
 			List<JsonSerializable> usersJson = new ArrayList<JsonSerializable>();
 			usersJson.addAll( (Collection<? extends JsonSerializable>) userDao.getAllUsers() );
 			
-			// Return the token on the response
+			// Return the users on the response
 			return ResponseBuilder.createResponse( Response.Status.OK, usersJson );
 		}
 		catch( UserNotFoundException e ) {
@@ -197,7 +197,7 @@ public class UserRestService extends ResourceConfig {
 			
 			userDao.deleteUser( id );
 			
-			// Return the token on the response
+			// Return the response
 			return ResponseBuilder.createResponse( Response.Status.OK, "User deleted" );
 		}
 		catch( UserNotFoundException e ) {
